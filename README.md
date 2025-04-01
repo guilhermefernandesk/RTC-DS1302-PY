@@ -52,7 +52,7 @@ finally:
 
 ## 🚀 Funções Públicas
 
-### `setRAM(self, data)`
+### `setRAM(data)`
 
 Escreve dados na memória RAM do DS1302 (máximo de 31 bytes).
 
@@ -62,7 +62,7 @@ Escreve dados na memória RAM do DS1302 (máximo de 31 bytes).
 
 ---
 
-### `getRAM(self)`
+### `getRAM()`
 
 Lê os dados armazenados na RAM do DS1302.
 
@@ -72,7 +72,7 @@ Lê os dados armazenados na RAM do DS1302.
 
 ---
 
-### `cleanupGPIO(self)`
+### `cleanupGPIO()`
 
 Limpa os pinos GPIO.
 
@@ -80,7 +80,7 @@ Esta função deve ser chamada quando os pinos GPIO não forem mais necessários
 
 ---
 
-### `second(self, second=None)`
+### `second(second=None)`
 
 Lê ou define os segundos do DS1302.
 
@@ -94,7 +94,7 @@ Lê ou define os segundos do DS1302.
 
 ---
 
-### `minute(self, minute=None)`
+### `minute(minute=None)`
 
 Lê ou define os minutos do DS1302.
 
@@ -108,7 +108,7 @@ Lê ou define os minutos do DS1302.
 
 ---
 
-### `hour(self, hour=None)`
+### `hour(hour=None)`
 
 Lê ou define a hora do DS1302.
 
@@ -122,7 +122,7 @@ Lê ou define a hora do DS1302.
 
 ---
 
-### `day(self, day=None)`
+### `day(day=None)`
 
 Lê ou define o dia do DS1302.
 
@@ -136,7 +136,7 @@ Lê ou define o dia do DS1302.
 
 ---
 
-### `month(self, month=None)`
+### `month(month=None)`
 
 Lê ou define o mês do DS1302.
 
@@ -150,7 +150,7 @@ Lê ou define o mês do DS1302.
 
 ---
 
-### `weekday(self, weekday=None)`
+### `weekday(weekday=None)`
 
 Lê ou define o dia da semana do DS1302.
 
@@ -164,7 +164,7 @@ Lê ou define o dia da semana do DS1302.
 
 ---
 
-### `year(self, year=None)`
+### `year(year=None)`
 
 Lê ou define o ano do DS1302.
 
@@ -178,7 +178,7 @@ Lê ou define o ano do DS1302.
 
 ---
 
-### `setDateTime(self, dateTime)`
+### `setDateTime(dateTime)`
 
 Define a data e hora do DS1302.
 
@@ -194,9 +194,13 @@ Define a data e hora do DS1302.
 ds1302.setDateTime([0, 30, 14, 15, 4, 3, 22])
 ```
 
-### `getDateTime(self)`
+### `getDateTime(format_type=None)`
 
 Lê a data e hora do DS1302.
+
+**Parâmetros:**
+
+- `format_type`:Define o formato da data e hora retornada.
 
 **Retorno:**
 
@@ -205,8 +209,8 @@ Lê a data e hora do DS1302.
 **Exemplo:**
 
 ```python
-print(ds1302.getDateTime())
-# Segunda 2025-04-01 00:00:00
+print(ds1302.getDateTime())       # Terça 2025-04-01 16:04:58
+print(ds1302.getDateTime("file")) # 2025-04-01_16-14-47
 ```
 
 ---
