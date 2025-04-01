@@ -7,10 +7,18 @@ O DS1302 é um chip de relógio em tempo real (RTC) que mantém a data e a hora 
 
 ## 📦 Instalação
 
-Antes de usar a biblioteca, certifique-se de que a Raspberry Pi tenha o `RPi.GPIO` instalado:
+Antes de usar a biblioteca, certifique-se de que a Raspberry Pi tenha o `ds1302` instalado:
 
 ```bash
-pip install RPi.GPIO
+pip install git+https://github.com/guilhermefernandesk/RTC-DS1302-PY.git
+```
+
+## 🔁 Atualização
+
+Se já instalou e deseja atualizar para a versão mais recente:
+
+```bash
+pip install --upgrade git+https://github.com/guilhermefernandesk/RTC-DS1302-PY.git
 ```
 
 # Mapeamento dos Pinos para o DS1302
