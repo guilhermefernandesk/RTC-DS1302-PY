@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools", "wheel", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ds1302"
+dynamic = ["version"]
+description = "Biblioteca para comunicação com RTC DS1302 na Raspberry Pi"
+authors = [
+    {name = "Guilherme Fernandes de Oliveira", email = "guilhermeferoliv@gmail.com"}
+]
+license = { file = "LICENSE" }
+dependencies = ["RPi.GPIO"]
+readme = "README.md",
+requires-python = ">=3.6"
+
+[tool.setuptools]
+packages = ["ds1302"]
+classifiers=[
+   "Programming Language :: Python :: 3",
+   "License :: OSI Approved :: MIT License",
+   "Operating System :: OS Independent",
+],
+
+[project.urls]
+homepage = "https://github.com/guilhermefernandesk/RTC-DS1302-PY"
+"GitHub" = "https://github.com/guilhermefernandesk/RTC-DS1302-PY"
+
+[tool.setuptools_scm]
