@@ -48,7 +48,7 @@ class DS1302:
   _REG_RAM_BURST_WRITE       = (0xFE)
   _REG_RAM_BURST_READ        = (0xFF)
   _CLK_PERIOD                = 0.000002  # 2us
-  _DAYOFWEEK = [ "Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado" ]
+  _DAYOFWEEK = [ "","Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado" ]
   _MASK_TIME = {
     "SECOND": 0b01111111,
     "MINUTE": 0b01111111,
@@ -183,8 +183,8 @@ class DS1302:
         raise ValueError("Dia deve estar entre 1 e 31")
     if not (1 <= month <= 12):
         raise ValueError("Mês deve estar entre 1 e 12")
-    if not (0 <= weekday <= 6):
-        raise ValueError("Dia da semana deve estar entre 0 e 6")
+    if not (1 <= weekday <= 7):
+        raise ValueError("Dia da semana deve estar entre 1 e 7")
     if not (0 <= year <= 99):
         raise ValueError("Ano deve estar entre 0 e 99")
 
@@ -270,8 +270,8 @@ class DS1302:
     if weekday is None:
       return self._bcd2dec(self._readReg(self._REG_DAYOFWEEK_WRITE) & self._MASK_TIME["DAYOFWEEK"])
     else:
-      if not (0 <= weekday <= 6):
-        raise ValueError("Dia da semana deve estar entre 0 e 6")
+      if not (1 <= weekday <= 7):
+        raise ValueError("Dia da semana deve estar entre 1 e 7")
       self._writeReg(self._REG_DAYOFWEEK_WRITE, self._dec2bcd(weekday))
 
   def year(self, year=None):
