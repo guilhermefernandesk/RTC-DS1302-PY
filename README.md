@@ -2,7 +2,7 @@
 
 ## 📌 Visão Geral
 
-Esta biblioteca permite a comunicação com o RTC DS1302 usando a Raspberry Pi via GPIO.
+Esta biblioteca permite a comunicação com o RTC DS1302 usando a Raspberry Pi 3 Model B V1.2 via GPIO.
 O DS1302 é um chip de relógio em tempo real (RTC) que mantém a data e a hora mesmo quando a Raspberry Pi está desligada.
 
 ## 📦 Instalação
@@ -23,7 +23,7 @@ pip install --upgrade git+https://github.com/guilhermefernandesk/RTC-DS1302-PY.g
 
 # Mapeamento dos Pinos para o DS1302
 
-A tabela abaixo descreve o mapeamento dos pinos GPIO da Raspberry Pi usados para se comunicar com o módulo DS1302:
+A tabela abaixo descreve o mapeamento dos pinos GPIO da Raspberry Pi 3 Model B V1.2 usados para se comunicar com o módulo DS1302:
 
 | **Sinal** | **Pino no DS1302** | **GPIO na Raspberry Pi** |
 | --------- | ------------------ | ------------------------ |
